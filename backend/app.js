@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import conectaBanco from './src/config/dbconnect.js';
 import usuarios from './src/models/usuarios.js';
+import empresas from './src/models/empresas.js';
 
 // Obter o diretório atual
 const __filename = fileURLToPath(import.meta.url);
@@ -33,7 +34,7 @@ app.listen(PORT, async () => {
   conexao.once("open", () => {
       console.log("Conexão com o banco feita com sucesso!");
   });
-  
+
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
 
