@@ -22,18 +22,18 @@ app.get('/api/posts/:id', async (req, res) => {
   res.json({ message: `Post ID: ${id}` });
 });
 
-const conexao = await conectaBanco();
-
-conexao.on("error", (erro) => {
-    console.error("erro de conexão ao banco de dados", erro);
-});
-
-conexao.once("open", () => {
-    console.log("Conexão com o banco feita com sucesso!");
-});
-
 // Iniciar o servidor
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
+  const conexao = await conectaBanco();
+
+  conexao.on("error", (erro) => {
+      console.error("erro de conexão ao banco de dados", erro);
+  });
+
+  conexao.once("open", () => {
+      console.log("Conexão com o banco feita com sucesso!");
+  });
+  
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
 

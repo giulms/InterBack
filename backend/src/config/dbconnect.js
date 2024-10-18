@@ -6,5 +6,4 @@ async function conectaBanco(){
     return mongoose.connection;
 };
 
-
 export default conectaBanco;

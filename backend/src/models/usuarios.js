@@ -6,8 +6,8 @@ const usuariosSchema = new mongoose.Schema({
     sobrenome: { type: String, require:true },
     email: { type: String, require:true },
     senha: { type: String, require:true },
-}, {versionKey: False});
+}, {versionKey: false});
 
-const usuarios = mongoose.model("Usuarios", usuariosSchema);
+const usuarios = mongoose.model("usuarios", usuariosSchema);    
 
 export default usuarios;
